@@ -1,13 +1,10 @@
 # MorphOMICs
 
-| :exclamation point: ANNOUNCEMENT                                                                   |
-|:---------------------------------------------------------------------------------------------------|
-| Due to a cyber attack on our Institute, the Git server (https://git.ist.ac.at/rcubero/morphomics/) |
-| which hosted `MorphOMICs` was taken down from public access. While the Institute's infrastructures |
-| are (slowly) being brought back to functionality, you can use this repository to download and try  |
-| out the codes. In the meanwhile, we do ask for your patience.                                      |
 
-Due to a cyber attack on our Institute, the Git server (https://git.ist.ac.at/rcubero/morphomics/) which hosted `MorphOMICs` was taken down from public access. While the Institute's infrastructures are (slowly) being brought back to functionality, you can use this repository to download and try out the codes. In the meanwhile, we do ask for your patience.
+| ❗ANNOUNCEMENT❗  |
+|:------------------|
+| Due to a cyber attack on our Institute, the Git server (https://git.ist.ac.at/rcubero/morphomics/) which hosted `MorphOMICs` was taken down from public access. While the Institute's infrastructures are (slowly) being brought back to functionality, you can use this repository to download and try out the codes. In the meanwhile, we do ask for your patience. |                                    
+
 
 `MorphOMICs` is a Python package containing tools for analyzing microglia morphology using a topological data analysis approach. Note that this algorithm is designed not only for microglia applications but also for any dynamic branching structures across natural sciences.
 
