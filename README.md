@@ -20,7 +20,7 @@ Python : 3.7+
 
 numpy : 1.8.1+, scipy : 0.13.3+, pickle : 4.0+, enum34 : 1.0.4+, scikit-learn : 0.19.1+, matplotlib : 3.2.0+
 
-Additioal dependencies:
+Additional dependencies:
 anndata : 0.7+, umap-learn : 0.3.10+, palantir : 1.0.0+, fa2
 
 # Installation Guide
