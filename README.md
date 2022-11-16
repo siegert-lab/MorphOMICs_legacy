@@ -1,3 +1,9 @@
+![GitHub top language](https://img.shields.io/github/languages/top/siegert-lab/MorphOMICs.svg?style=for-the-badge)
+[![GitHub](https://img.shields.io/github/license/siegert-lab/MorphOMICs.svg?style=for-the-badge)](https://github.com/siegert-lab/MorphOMICs/blob/master/license.txt)
+[![GitHub contributors](https://img.shields.io/github/contributors/siegert-lab/MorphOMICs.svg?style=for-the-badge)](https://github.com/siegert-lab/MorphOMICs/graphs/contributors)
+![GitHub repo size in bytes](https://img.shields.io/github/repo-size/siegert-lab/MorphOMICs.svg?style=for-the-badge)
+[![GitHub issues](https://img.shields.io/github/issues/siegert-lab/MorphOMICs.svg?style=for-the-badge)](https://github.com/siegert-lab/MorphOMICs/issues)
+
 # MorphOMICs
 
 
