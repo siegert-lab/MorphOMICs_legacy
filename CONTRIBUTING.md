@@ -6,9 +6,13 @@ As a contributor, here are the guidelines we would like you to follow:
 * [Feature Requests](#feature)
 * [Submission Guidelines](#submit)
 
-## <a name="issue"></a> Got a question or found a bug?
+## <a name="issue"></a> Got a question?
 
-If you have a question or find a bug in the source code, you can help us by
+If you have a question about the codes, feel free to contact Ryan Cubero (ryanjohn.cubero@ista.ac.at).
+
+## <a name="issue"></a> Found a bug?
+
+If you find a bug in the source code, you can help us by
 [submitting an issue](#submit-issue) to our [GitHub Repository][github]. Even better, you can
 [submit a Pull Request](#submit-pr) with a fix.
 
