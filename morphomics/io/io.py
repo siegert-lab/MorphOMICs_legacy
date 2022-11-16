@@ -94,7 +94,7 @@ def load_neuron(
         soma_ids = _np.where(_np.transpose(data)[1] == soma_index)[0]
     except IndexError:
         raise LoadNeuronError("Soma points not in the expected format")
-    print(os.path.splitext(input_file)[-2:], len(soma_ids))
+    # print(os.path.splitext(input_file)[-2:], len(soma_ids))
 
     # Extract soma information from swc
     soma = Soma.Soma(
