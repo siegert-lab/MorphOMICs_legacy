@@ -11,7 +11,7 @@ with open("README.md", "r") as fh:
 config = {
     "description": "MorphOMICs: a python package for the topological and statistical  analysis of microglia morphology",
     "author": "Ryan Cubero",
-    "url": "https://git.ist.ac.at/rcubero/morphomics",
+    "url": "https://github.com/rcubero/MorphOMICs",
     "author_email": "ryanjohn.cubero@ist.ac.at",
     "long_description": long_description,
     "long_description_content_type": "text/markdown",

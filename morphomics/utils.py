@@ -24,6 +24,11 @@ distances = {
     "l2": lambda t1, t2: np.sqrt(np.dot(t1 - t2, t1 - t2)),
 }
 
+scipy_metric = {
+    "l1": "cityblock",
+    "l2": "euclidean",
+}
+
 norm_methods = {
     # returns the normalization factor based on the method
     "max": lambda arr: np.amax(arr),
