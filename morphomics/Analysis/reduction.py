@@ -16,30 +16,10 @@ from scipy.spatial.distance import cdist, squareform
 import umap
 
 from morphomics.Topology import analysis
-from morphomics.utils import save_obj, load_obj
-from morphomics.utils import norm_methods, distances
+from morphomics.utils import save_obj
+from morphomics.utils import norm_methods, scipy_metric
+from morphomics.default_parameters import defaults
 
-scipy_metric = {
-    "l1": "cityblock",
-    "l2": "euclidean",
-}
-
-defaults = {}
-# define default image parameter values
-defaults['image_parameters'] = {}
-defaults['image_parameters']["xlims"] = None
-defaults['image_parameters']["ylims"] = None
-defaults['image_parameters']["norm_method"] = "sum"
-defaults['image_parameters']["metric"] = "l1"
-defaults['image_parameters']["chunks"] = 10
-defaults['image_parameters']["cutoff"] = 5
-
-defaults['UMAP_parameters'] = {}
-defaults['UMAP_parameters']["N_dims"] = 10
-defaults['UMAP_parameters']["n_neighbors"] = 20
-defaults['UMAP_parameters']["min_dist"] = 1.0
-defaults['UMAP_parameters']["spread"] = 3.0
-defaults['UMAP_parameters']["random_state"] = 10
 
 def _get_persistence_image_data_single(ar):
     """
