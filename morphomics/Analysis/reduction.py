@@ -24,6 +24,22 @@ scipy_metric = {
     "l2": "euclidean",
 }
 
+defaults = {}
+# define default image parameter values
+defaults['image_parameters'] = {}
+defaults['image_parameters']["xlims"] = None
+defaults['image_parameters']["ylims"] = None
+defaults['image_parameters']["norm_method"] = "sum"
+defaults['image_parameters']["metric"] = "l1"
+defaults['image_parameters']["chunks"] = 10
+defaults['image_parameters']["cutoff"] = 5
+
+defaults['UMAP_parameters'] = {}
+defaults['UMAP_parameters']["N_dims"] = 10
+defaults['UMAP_parameters']["n_neighbors"] = 20
+defaults['UMAP_parameters']["min_dist"] = 1.0
+defaults['UMAP_parameters']["spread"] = 3.0
+defaults['UMAP_parameters']["random_state"] = 10
 
 def _get_persistence_image_data_single(ar):
     """
@@ -32,7 +48,7 @@ def _get_persistence_image_data_single(ar):
     ar[3]:   normalization method (see morphomics.utils.norm_methods)
     ar[4]:   barcode size cutoff
     """
-    if len(ar[0]) >= ar[5]:
+    if len(ar[0]) >= ar[4]:
         res = analysis.get_persistence_image_data(
             ar[0], xlims=ar[1], ylims=ar[2], norm_method=ar[3]
         )
@@ -123,11 +139,12 @@ def get_distance_array(
     metric="l1",
     chunks=10,
     to_squareform=True,
+    barcode_size_cutoff=5,
 ):
     """
     Computes and outputs array of pre-computed distances for heirarchical clustering
     """
-    imgs1 = get_images_array(p1, xlims=xlims, ylims=ylims, norm_method=norm_method)
+    imgs1 = get_images_array(p1, xlims=xlims, ylims=ylims, norm_method=norm_method, barcode_size_cutoff=barcode_size_cutoff)
     distances = _get_pairwise_distance_from_persistence(
         imgs1, metric=metric, chunks=chunks, to_squareform=to_squareform
     )
@@ -198,17 +215,17 @@ def calculate_umap(
     Calculates the UMAP representation of the distance matrix X
     """
     # use default if image_parameters is not given
+    complete_keys = ["xlims", "ylims", "norm_method", "metric", "chunks", "cutoff"]
+    
     if image_parameters is None:
-        image_parameters["xlims"] = None
-        image_parameters["ylims"] = None
-        image_parameters["norm_method"] = "sum"
-        image_parameters["metric"] = "l1"
-        image_parameters["chunks"] = 10
-    else:
-        # check if image_parameters is complete
-        complete_keys = ["xlims", "ylims", "norm_method", "metric", "chunks"]
-        for keys in image_parameters.keys():
-            assert keys in complete_keys, "image_parameters incomplete: %s" % keys
+        image_parameters = {}
+        
+    for keys in complete_keys:
+        try:
+            image_parameters[keys]
+        except:
+            print("image_parameters: %s is not given. Reverting to default" % keys)
+            image_parameters[keys] = defaults['image_parameters'][keys]
 
     # calculate distance matrix
     print("Calculating distance matrix...")
@@ -219,21 +236,22 @@ def calculate_umap(
         norm_method=image_parameters["norm_method"],
         metric=image_parameters["metric"],
         chunks=image_parameters["chunks"],
+        barcode_size_cutoff=image_parameters["cutoff"],
         to_squareform=True,
     )
 
     # use default if UMAP_parameters is not given
+    complete_keys = ["N_dims", "n_neighbors", "min_dist", "spread", "random_state"]
+    
     if UMAP_parameters is None:
-        UMAP_parameters["N_dims"] = 10
-        UMAP_parameters["n_neighbors"] = 20
-        UMAP_parameters["min_dist"] = 1.0
-        UMAP_parameters["spread"] = 3.0
-        UMAP_parameters["random_state"] = 10
-    else:
-        # check if UMAP_parameters is complete
-        complete_keys = ["N_dims", "n_neighbors", "min_dist", "spread", "random_state"]
-        for keys in UMAP_parameters.keys():
-            assert keys in complete_keys, "UMAP_parameters incomplete: %s" % keys
+        UMAP_parameters = {}
+        
+    for keys in complete_keys:
+        try:
+            UMAP_parameters[keys]
+        except:
+            print("UMAP_parameters: %s is not given. Reverting to default" % keys)
+            UMAP_parameters[keys] = defaults['UMAP_parameters'][keys]
 
     print("Calculating singular value decomposition...")
     U, _, _ = svd(X)
