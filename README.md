@@ -39,7 +39,8 @@ python3 setup.py install
 ```
 
 # Usage
-The easiest way to navigate through `MorphOMICs` is to run the demo notebook:
+The easiest way to navigate through `MorphOMICs` is to run the `Morphomics_demo notebook`:
+  - unzip `demo.zip`
   - `cd demo`
   - `jupyter notebook`
   - Copy the url it generates, it looks something like this: `http://127.0.0.1:8888/?token=a4d016c37e162499e17b2993e69073fac0018bd9a779b762`
