@@ -21,7 +21,6 @@ config = {
         "numpy>=1.8.0",
         "scikit-learn>=0.19.1",
         "cached-property>=1.5.1",
-        "morphio>=2.7.1",
         "matplotlib>=3.2.0",
         "anndata>=0.7",
         "umap-learn>=0.3.10",
