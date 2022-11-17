@@ -40,7 +40,7 @@ python3 setup.py install
 
 # Usage
 The easiest way to navigate through `MorphOMICs` is to run the `Morphomics_demo notebook`:
-  - download `demo.zip` from https://github.com/siegert-lab/MorphOMICs.git
+  - download `demo.zip` from https://seafile.ist.ac.at/f/eb13e707041749269ff9/?dl=1
   - unzip `demo.zip`
   - `cd demo`
   - `jupyter notebook`
