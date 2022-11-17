@@ -33,13 +33,14 @@ anndata : 0.7+, umap-learn : 0.3.10+, palantir : 1.0.0+, fa2
 
 # Installation Guide
 ```
-git clone https://git.ist.ac.at/rcubero/morphomics
+git clone https://github.com/siegert-lab/MorphOMICs.git
 cd morphomics
 python3 setup.py install
 ```
 
 # Usage
 The easiest way to navigate through `MorphOMICs` is to run the `Morphomics_demo notebook`:
+  - download `demo.zip` from https://github.com/siegert-lab/MorphOMICs.git
   - unzip `demo.zip`
   - `cd demo`
   - `jupyter notebook`
