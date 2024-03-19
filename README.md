@@ -9,7 +9,7 @@
 
 | ❗WARNING❗  |
 |:------------------|
-| These codes contain outdated scripts for running morphOMICs, but will still remain public for legacy reasons. The latest codes are found in https://github.com/siegert-lab/morphOMICs_v2 |                                    
+| These codes contain outdated scripts for running morphOMICs, but will still remain public for legacy reasons. The latest codes are found in https://github.com/siegert-lab/morphOMICs |                                    
 
 
 `MorphOMICs` is a Python package containing tools for analyzing microglia morphology using a topological data analysis approach. Note that this algorithm is designed not only for microglia applications but also for any dynamic branching structures across natural sciences.
